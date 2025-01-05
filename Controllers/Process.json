@@ -1,0 +1,45 @@
+{
+  "root": {
+    "VMSProcess": [
+      {
+        "Sequence": "99",
+        "ProcessName": "Mandatory | Name of the Process, should be unique",
+        "ProcessSwitch": "Mandatory |Indicates if the process is active. Use 'ON' for active and 'OFF' for inactive",
+        "ProcessFrequency": "Mandatory |Frequency at which the process runs. Format: HH:MM:SS (e.g., 00:00:00, 01:00:30)",
+        "process_scrip": "Script to execute the process with parameters placeholder",
+        "WINDOWS_process_location": "Mandatory |WINDOWS Location of the process related file or configuration",
+        "LINUX_process_location": "Mandatory |LINUX Location of the process related file or configuration"
+      },
+      {
+        "Sequence": "01",
+        "ProcessName": "CREATE_VOUCHER",
+        "ProcessSwitch": "ON",
+        "ProcessFrequency": "00:05:00",
+        "process_scrip": "python <script_path> -t <task_id>",
+        "WINDOWS_process_location": "WINDOWS\\Users\\Chathuranga\\Desktop\\VMS Tasks\\printDetails.py",
+        "LINUX_process_location": "LINUX\\Users\\Chathuranga\\Desktop\\VMS Tasks\\printDetails.py"
+
+      }
+    ,
+      {
+        "Sequence": "02",
+        "ProcessName": "DISCARD_VOUCHER",
+        "ProcessSwitch": "ON",
+        "ProcessFrequency": "00:05:00",
+        "process_scrip": "python <script_path> -t <task_id> ",
+        "WINDOWS_process_location": "WINDOWS\\Users\\Chathuranga\\Desktop\\VMS Tasks\\printDetails.py",
+        "LINUX_process_location": "LINUX\\Users\\Chathuranga\\Desktop\\VMS Tasks\\printDetails.py"
+      }
+      ,
+      {
+        "Sequence": "03",
+        "ProcessName": "ACTIVE_VOUCHER",
+        "ProcessSwitch": "OFF",
+        "ProcessFrequency": "00:05:00",
+        "process_scrip": "python <script_path> -t <task_id> ",
+        "WINDOWS_process_location": "WINDOWS\\Users\\Chathuranga\\Desktop\\VMS Tasks\\printDetails.py",
+        "LINUX_process_location": "LINUX\\Users\\Chathuranga\\Desktop\\VMS Tasks\\printDetails.py"
+      }
+    ]
+  }
+}

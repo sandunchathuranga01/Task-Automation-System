@@ -1,0 +1,27 @@
+{
+  "root": {
+    "VMSProcess": [
+      {
+        "Sequence": "99",
+        "ProcessName": "ProcessName",
+        "ProcessExcludeTime": "Specific time ranges to exclude the process (HH:MM-HH:MM format)",
+        "ProcessExcludeDay": "Specific days to exclude the process",
+        "SpecificProcessTime": "Specific time to start the process (HH:MM format)"
+      },
+      {
+        "Sequence": "01",
+        "ProcessName": "CREATE_VOUCHER",
+        "ProcessExcludeTime": [],
+        "ProcessExcludeDay": [],
+        "SpecificProcessTime": ""
+      },
+      {
+        "Sequence": "02",
+        "ProcessName": "DISCARD_VOUCHER",
+        "ProcessExcludeTime": [],
+        "ProcessExcludeDay": [],
+        "SpecificProcessTime": ""
+      }
+    ]
+  }
+}

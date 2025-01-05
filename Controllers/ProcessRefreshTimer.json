@@ -1,0 +1,6 @@
+{
+  "TaskSystem": {
+    "systemRefreshTimer": "00:10:00",
+    "systemRefreshTimer_comment": "time format HH:MM:SS. This frequency is used to change the system refresh rate."
+  }
+}

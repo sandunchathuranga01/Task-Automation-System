@@ -1,0 +1,34 @@
+{
+  "paths": {
+    "file": [
+      {
+        "locationName": "system_switch_file_path",
+        "location": "Controllers/SystemSwitch.json"
+      },
+      {
+        "locationName": "logFileLocation",
+        "location": "C:\\Users\\Chathuranga\\Desktop"
+      },
+      {
+        "locationName": "Zipped_log_files",
+        "location": "C:\\Users\\Chathuranga\\Desktop"
+      },
+      {
+        "locationName": "Process_json_file_path",
+        "location": "Controllers/Process.json"
+      },
+      {
+        "locationName": "process_schedule_json_file_path",
+        "location": "Controllers/processSchedule.json"
+      },
+      {
+        "locationName": "ProcessRefreshTimer_json_file_path",
+        "location": "Controllers/ProcessRefreshTimer.json"
+      },
+      {
+        "locationName": "FilePathLocations",
+        "location": "Configuration/FilePathLocations.json"
+      }
+    ]
+  }
+}

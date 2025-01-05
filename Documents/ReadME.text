@@ -1,0 +1,76 @@
+# Process Management Script
+
+This Python script manages and schedules processes based on configurations specified in JSON files. It periodically refreshes process data, updates task statuses, and executes commands associated with tasks.
+
+## Features
+
+- **Periodic Refresh**: Refreshes the list of processes based on a configurable interval.
+- **Process Management**: Adds, updates, or removes processes based on their current state.
+- **Task Scheduling**: Executes tasks associated with processes according to their scheduled times and frequencies.
+- **Database Interaction**: Queries and updates tasks in a MySQL database.
+- **Configuration**: Loads and updates configurations from JSON files.
+
+## Requirements
+
+- Python 3.x
+- `mysql-connector-python`
+- Access to a MySQL database
+
+## Setup
+
+1. **Install Dependencies**:
+
+   Install the required Python package using pip:
+   ```bash
+   pip install mysql-connector-python
+   ```
+
+2. **Configuration Files**:
+
+   - `Controllers/Process.json`: Contains the list of processes and their details.
+   - `Controllers/processSchedule.json`: Contains the scheduling information for processes.
+   - `Controllers/systemRefreshTimer.json`: Contains the system refresh interval in HH:MM:SS format.
+
+3. **Database Configuration**:
+
+   Ensure the `db_query.py` module is correctly configured to connect to your MySQL database. This module should define functions for creating database connections and querying/updating tasks.
+
+## Usage
+
+1. **Run the Script**:
+
+   Execute the script using Python:
+   ```bash
+   python your_script_name.py
+   ```
+
+   The script will start periodic refreshes and process management based on the defined schedules and intervals.
+
+2. **Monitor Output**:
+
+   The script prints logs to the console, including process additions, updates, and execution details.
+
+## Functions
+
+- `load_system_refresh_timer(file_path)`: Loads the system refresh interval from the specified JSON file.
+- `load_processes_from_json(file_path)`: Loads processes from the specified JSON file.
+- `update_processes()`: Updates the list of available processes.
+- `refresh_looking_process()`: Periodically refreshes the list of processes.
+- `check_system_refresh_timer()`: Periodically checks for updates to the system refresh timer.
+- `parse_frequency_to_seconds(frequency)`: Parses a time frequency string into seconds.
+- `query_tasks_related_to_process(process)`: Queries tasks related to a process and executes commands.
+- `execute_process_command(connection, process, process_location, process_script, task_id)`: Executes the command associated with a task.
+- `should_fire_process(process)`: Determines if a process should be fired based on its schedule.
+- `fire_process(process)`: Fires processes based on their frequency.
+- `fetch_process_parameters(connection, task_id)`: Fetches parameters for a task from the database.
+- `update_task_status_and_start(connection, task_id, new_status)`: Updates the task status and creation time.
+- `update_task_status_and_end(connection, task_id, new_status)`: Updates the task status and status change time.
+- `update_task_comment(connection, task_id, comment)`: Updates the task comment.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to adjust any sections to better fit your specific setup or requirements!
